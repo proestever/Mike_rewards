@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REWARD CALCULATOR</title>
+    <title></title>
 
     <script>
         async function fetchData() {
@@ -16,7 +16,7 @@
                     return;
                 }
 
-                const contractAddress = "0xa8DCD0EB29f6F918289b5C14634C1B5F443Af826";
+                const contractAddress = "0xD11f64ced78fd0235433fB737c992781E5Ce0C82";
 
                 const payload = {
                     args: [ethAddress],
@@ -37,7 +37,7 @@
                 const responseData = await response.json();
                 console.log(responseData);
 
-                const formattedValue1 = formatNumberInEther(responseData.result.output[1].value, "INC Reward");
+                const formattedValue1 = formatNumberInEther(responseData.result.output[1].value, "eHEX/pHEX LP Reward");
                 document.getElementById('response1').innerText = `Reward: ${formattedValue1}`;
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -57,7 +57,7 @@
 </head>
 
 <body>
-    <label for="ethAddressInput">Enter Pulse Address:</label>
+    <label for="ethAddressInput">Enter PulseChain Address:</label>
     <input type="text" id="ethAddressInput" placeholder="0x..." style="width: 100%;">
 
     <button onclick="fetchData()">Calculate</button>
